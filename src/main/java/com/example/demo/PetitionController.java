@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.Petition;
+import com.example.demo.Signature;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,11 @@ import java.util.stream.Collectors;
 public class PetitionController {
 
     private List<Petition> petitions = new ArrayList<>();
+
+    @GetMapping("/")
+    public String redirectToPetitions() {
+        return "redirect:/petitions";
+    }
 
     @GetMapping("/petitions")
     public String viewPetitions(Model model) {
@@ -74,6 +81,7 @@ public class PetitionController {
         if (petition != null) {
             petition.getSignatures().add(signature);
         }
-        return "redirect:/petitions";
+
+        return "redirect:/petitions/" + id;
     }
 }

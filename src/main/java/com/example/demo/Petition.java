@@ -9,8 +9,6 @@ public class Petition {
     private String content;
     private List<Signature> signatures;
 
-    // Constructors, getters, setters
-
     public static int getIdCounter() {
         return idCounter;
     }

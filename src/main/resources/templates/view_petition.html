@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>View Petition</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
 <h2 th:text="${petition.title}"></h2>
@@ -14,7 +15,7 @@
     </li>
 </ul>
 <h3>Sign the Petition</h3>
-<form action="/petitions/{id}/sign" method="post" th:object="${signature}">
+<form th:action="@{'/petitions/' + ${petition.id} + '/sign'}" method="post" th:object="${signature}">
     Name: <input type="text" th:field="*{name}">
     <br>
     Email: <input type="text" th:field="*{email}">

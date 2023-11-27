@@ -2,6 +2,7 @@ package com.example.demo;
 
 public class Signature {
     private String name;
+    private String email;
 
     public String getName() {
         return name;
@@ -18,6 +19,4 @@ public class Signature {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    private String email;
 }
